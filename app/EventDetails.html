@@ -35,6 +35,31 @@
 	    </address>
 	  </div>
 	</div>
+	<hr />
+	<h3>Sessions</h3>
+      	<ul class="thumbnails">
+      	  <li ng-repeat="session in event.sessions">
+	    <div class="row session">
+	      <div class="span0 well votingWidget">
+		<div class="votingButton" ng-click="upVoteSession(session)">
+		  <i class="icon-chevron-up"></i>
+		</div>
+		<div class="badge badge-inverse">
+		  <div>{{session.upVoteCount}}</div>
+		</div>
+		<div class="votingButton" ng-click="downVoteSession(session)">
+		  <i class="icon-chevron-down"></i>
+		</div>
+	      </div>
+	      <div class="well span9">
+		<h4 class="well-title">{{session.name}}</h4>
+		<h6 style="margin-top:10px">{{session.name}}</h6>
+		<span>Duration: {{session.duration}}</span></br>
+		<span>Level: {{session.level}}</span></br>
+		<p>{{session.abstract}}</p>
+	    </div>
+      	  </li>
+      	</ul>
       </div>
     </div>
     <!-- <script src="/lib/jquery.min.js"></script> -->
