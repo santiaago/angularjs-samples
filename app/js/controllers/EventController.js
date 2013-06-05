@@ -7,9 +7,10 @@ eventsApp.controller('EventController',
 			 $scope.mystyle = {color:'red'};
 			 $scope.myclass = "blue";
 			 $scope.buttonDisabled = true;
+			 $scope.sortorder = 'name';//dash is for descendingupVoteCount';
 			 $scope.event = {
 			     name: 'Tree Boot Camp',
-			     date: '31/5/2013',
+			     date: 1359781015626,
 			     time: '10:30 am',
 			     location:{
 				 address: 'Gollum Headquarters',
