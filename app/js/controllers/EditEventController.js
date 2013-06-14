@@ -5,6 +5,8 @@ eventsApp.controller('EditEventController',
 			 $scope.saveEvent = function(event){
 			     window.alert('event ' + event.name + ' save');
 			 }
-			 $scope.cancelEvent = function(){}
+			 $scope.cancelEdit = function(){
+			     window.location = "/EventDetails.html";
+			 }
 		     }
 );
