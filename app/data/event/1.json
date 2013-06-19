@@ -6,6 +6,7 @@
 "sessions": [
 {
 "name": "Directives Masterclass",
+"id": 1,
 "creatorName": "Bob this",
 "duration": 1,
 "level": "Advanced",
@@ -14,6 +15,7 @@
 },
 {
 "name": "Scopes for fun and profit",
+"id": 2,
 "creatorName": "Will that",
 "duration": 2,
 "level": "Intermediate",
@@ -22,6 +24,7 @@
 },
 {
 "name": "Well Behaved Controllers",
+"id": 3,
 "creatorName": "Ang Le",
 "duration": 4,
 "level": "Introductory",
