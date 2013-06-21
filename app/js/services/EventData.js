@@ -24,6 +24,10 @@ eventsApp.factory('eventData', function($resource, $q){
 			 );
 	    console.log('event data save done!');
 	    return deferred.promise;
+	},
+	getAllEvents: function(event){
+	    console.log('event data getAllEvents.');
+	    return resource.query(); 
 	}
     };
 });

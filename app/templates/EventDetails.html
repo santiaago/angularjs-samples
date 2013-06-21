@@ -1,0 +1,82 @@
+<div style="padding-left:20px; padding-right:20px">
+  <img ng-src="{{event.imageUrl}}" alt="{{event.name}}"/>
+  <button type="button" class="btn btn-primary" ng-click="scrollToSession()">Scroll</button>
+  <div class="row">
+    <div class="span11">
+      <h2>{{event.name}}</h2>
+      <h2 ng-bind="event.name"></h2>
+      <h2 ng-style="mystyle" ng-bind-template="{{event.name}} {{event.date | date:'mediumDate'}}"></h2>
+      <h2 ng-class="myclass" ng-bind-template="{{event.name}} {{event.date | date:'mediumDate'}}"></h2>
+      <h2>{{event.name | uppercase}}</h2>
+    </div>
+  </div>
+  <button class="btn" ng-disabled="buttonDisabled">Disable</button>
+  <!-- expressions -->
+  <div>{{3 *  7}}</div>
+  <div ng-non-bindable>{{3 *  7}}</div>
+  <!--note: this needs angular sanitize -->
+  <div ng-bind-html="snippet">some title</div>
+  <div ng-bind-html-unsafe="snippet">some title</div>
+  <!-- end note -->
+  <h2 ng-show="boolValue">Show this</h2>
+  <h2 ng-hide="boolValue">Hide this</h2>
+  <div class="row">
+    <div class="span3">
+      <div><strong>{{event.date | date:'medium'}}</strong></div>
+      <div><strong>{{event.date | date:'mediumDate'}}</strong></div>
+      <div><strong>{{event.time}}</strong></div>
+      <div><strong>Price</strong> {{34 | currency}}</div>
+    </div>
+    <div class="span4">
+      <address>
+	<strong>Address:</strong><br/>
+	{{event.location.address}}<br/>
+	{{event.location.city}}, {{event.location.province}}
+      </address>
+    </div>
+  </div>
+  <!-- filter by the 3 digits -->
+  <div>{{3.1415926535 | number:3}}</div>
+  <div>{{3 | number:3}}</div>
+  <!-- json filter -->
+  <div>{{ {a:3, b:'hi', c:{aa:35} } | json }}</div>
+  <hr />
+  <h3>Sessions</h3>
+  Order By:
+  <select ng-model="sortorder" class="input-small">
+    <option selected value="name">Name</option>
+    <option selected value="-upVoteCount">Votes</option>
+  </select>
+  Show: 
+  <select ng-model="query.level" class="input-medium">
+    <option selected value="">All</option>
+    <option selected value="introductory">Introductory</option>
+    <option selected value="intermediate">Intermediate</option>
+    <option selected value="advanced">Advanced</option>
+  </select>
+  
+  <ul class="thumbnails">
+    <li ng-repeat="session in event.sessions | orderBy:sortorder | limitTo:2 | filter:query" class="span11" id="session{{session.id}}">
+      <div class="row session">
+	<div class="span0 well votingWidget">
+	  <div class="votingButton" ng-click="upVoteSession(session, event)">
+	    <i class="icon-chevron-up"></i>
+	  </div>
+	  <div class="badge badge-inverse">
+	    <div>{{session.upVoteCount}}</div>
+	  </div>
+	  <div class="votingButton" ng-click="downVoteSession(session)">
+	    <i class="icon-chevron-down"></i>
+	  </div>
+	</div>
+	<div class="well span9">
+	  <h4 class="well-title">{{session.name}}</h4>
+	  <h6 style="margin-top:10px">{{session.name}}</h6>
+	  <span>Duration: {{session.duration | durations}}</span><br/>
+	  <span>Level: {{session.level}}</span><br/>
+	  <p>{{session.abstract}}</p>
+	</div>
+      </div>
+    </li>
+  </ul>
+</div>
