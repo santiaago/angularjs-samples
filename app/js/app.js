@@ -1,7 +1,7 @@
 'use strict';
 
 var eventsApp = angular.module('eventsApp', ['ngSanitize','ngResource', 'ngCookies'])
-    .config(function($routeProvider){
+    .config(function($routeProvider, $locationProvider){
 	$routeProvider.when('/newEvent',
 			    {
 				templateUrl: 'templates/NewEvent.html',
@@ -16,9 +16,21 @@ var eventsApp = angular.module('eventsApp', ['ngSanitize','ngResource', 'ngCooki
 			    {
 				foo: 'bar',
 				templateUrl: 'templates/EventDetails.html',
+				//if you use template instead of templateUrl and pass it a string 
+				// that is what will be displayed.
 				controller: 'EventController',
+				//wait till I get the view.
+				// resolve: {
+				//     event: function($q, $route, eventData){
+				// 	var deferred = $defer();
+				// 	eventData.getEvent($route.current.pathParams.eventId)
+				// 	    .then(function(event){deferred.resolve(event);});
+				// 	return deferred.promise;
+				//     }
+				// }
 			    });
-	$routeProvider.otherwise({redirectTo: '/events'});
+	//$routeProvider.otherwise({redirectTo: '/events'});
+	//$locationProvider.html5Mode(true);
 
     })
     .factory('myCache', function($cacheFactory){
