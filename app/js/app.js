@@ -14,6 +14,7 @@ var eventsApp = angular.module('eventsApp', ['ngSanitize','ngResource', 'ngCooki
 			    });
 	$routeProvider.when('/event/:eventId',
 			    {
+				foo: 'bar',
 				templateUrl: 'templates/EventDetails.html',
 				controller: 'EventController',
 			    });
