@@ -1,7 +1,7 @@
 'use strict';
 
 eventsApp.controller('EventController',
-		     function EventController($scope, eventData, $anchorScroll){
+		     function EventController($scope, eventData, $anchorScroll, $routeParams){
 			 $scope.snippet = '<span style="color:red">hi there</span>';
 			 $scope.boolValue = true;
 			 $scope.mystyle = {color:'red'};
@@ -24,7 +24,8 @@ eventsApp.controller('EventController',
 			 // });
 			 // console.log($scope.event);
 			 //-3 demo with $resources and promeses
-			 $scope.event = eventData.getEvent();
+			 console.log("EventController.js: testing routeParams", $routeParams.eventId);
+			 $scope.event = eventData.getEvent($routeParams.eventId);
 			 $scope.event.then(
 			     function(event){console.log(event);},			     
 			     function(response){console.log(response);}

@@ -1,0 +1,34 @@
+{"name": "Simple Tree Boot Camp",
+"date": 1359781015626,
+"time": "10:30 am",
+"location":{"address": "Gollum Headquarters","city": "Mount Doom","province": "CA"},
+"imageUrl": "img/simple.jpg",
+"sessions": [
+{
+"name": "Simple Directives Masterclass",
+"id": 1,
+"creatorName": "Bob this",
+"duration": 1,
+"level": "Advanced",
+"abstract": "in this session you will learn about directives",
+"upVoteCount": 0
+},
+{
+"name": "Simple Scopes for fun and profit",
+"id": 2,
+"creatorName": "Will that",
+"duration": 2,
+"level": "Intermediate",
+"abstract": "In this session you will learn about scopes",
+"upVoteCount": 0
+},
+{
+"name": "Simple Well Behaved Controllers",
+"id": 3,
+"creatorName": "Ang Le",
+"duration": 4,
+"level": "Introductory",
+"abstract": "in this session you will learn about scopes",
+"upVoteCount":0
+}
+]}
