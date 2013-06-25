@@ -30,7 +30,7 @@ var eventsApp = angular.module('eventsApp', ['ngSanitize','ngResource', 'ngCooki
 				// }
 			    });
 	//$routeProvider.otherwise({redirectTo: '/events'});
-	//$locationProvider.html5Mode(true);
+	$locationProvider.html5Mode(true);
 
     })
     .factory('myCache', function($cacheFactory){
