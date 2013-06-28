@@ -4,9 +4,9 @@
   <hr/>
   <ul class="thumnails">
     <li ng-repeat="event in events|orderBy:sortorder" class="span5">
-      <event-thumbnail />
+      <event-thumbnail event="event"/>
     </li>
   </ul>
-  <event-thumbnail/>
+  <event-thumbnail event="event"/>
 </div>
 
