@@ -3,8 +3,6 @@
 eventsApp.directive('mySample', function($compile){
     console.log('directive my sample');
     return {
-	//restrict: 'E',
-	//template: "<input type='text' ng-model='sampleData' /> {{sampleData}}</br>";
 	//demo simple directive
 	// link: function(scope, element, attrs, controller){
 	//     console.log('directive link function');
