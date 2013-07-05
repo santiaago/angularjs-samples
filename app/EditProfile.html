@@ -11,8 +11,14 @@
       <form name="profileForm">
 	<div class="row-fluid">
 	  <div class="span3">
+	    <p>new</p>
+	    <gravatar email="{{user.emailAddress}}"/>
+	  </div>
+	  <div class="span3">
+	    <p>old</p>
 	    <img ng-src="{{getGravatarUrl(user.emailAddress)}}"/>
 	  </div>
+
 	  <div class="span3">
 	    <fieldset>
 	      <label for="userName">User Name:</label>
@@ -55,6 +61,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/controllers/EditProfileController.js"></script>
     <script src="/js/services/GravatarUrlBuilder.js"></script>
+    <script src="/js/directives/gravatar.js"></script>
     <script src="/js/filters.js"></script>
   </body>
 </html>
